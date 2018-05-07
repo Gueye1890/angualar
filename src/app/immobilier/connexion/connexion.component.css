@@ -1,0 +1,17 @@
+.card {
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 400px;
+    padding: 50px;
+}
+
+label {
+    font-size: 14px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+}

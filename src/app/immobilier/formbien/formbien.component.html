@@ -1,0 +1,31 @@
+<div class="row" style="margin-left:28%;width:1250px;">
+    <div class="col s12 m12 l6">
+        <div class="card-panel">
+            <h4 class="header2">rechercher un bien par le type de bien,par la ville et le prix</h4>
+            <div class="row">
+                <form class="col s12">
+                    <mat-form-field>
+                        <mat-select placeholder="recherche par la ville">
+                            <mat-option *ngFor="let ville of villes.ville" [value]="ville.idville">
+                                {{ ville.nomville }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="rechercher par le type">
+                            <mat-option *ngFor="let typebien of villes.typebien" [value]="typebien.idtypedebien">
+                                {{ typebien.nomtypedebien }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="input-field col s12">
+                        <i class="mdi-communication-email prefix"></i>
+                        <input id="email3" type="number">
+                    </div>
+                    <button mat-button>REchercher  </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

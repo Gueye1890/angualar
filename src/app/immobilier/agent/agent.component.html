@@ -1,0 +1,42 @@
+<div class="example-header">
+    Reservation En cours
+    <div class="input">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </div>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="nom">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> nom client </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.client.nomcomplet}} </mat-cell>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="adresse">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> adresse </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.client.adresse}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nomidtypebien">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.bien.typebien.libelletype}} </mat-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="localite">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> localite </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.bien.localite.libellelocalite}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    </mat-table>
+
+
+</div>

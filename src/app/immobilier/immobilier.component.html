@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row searchcl">
+        <div class="col s3 m3 divdiv">
+            <div class="card-panel">
+                <h4 class="header2">Rechercher</h4>
+                <div class="row">
+                    <form class="col s12" #formsearch="ngForm" (ngSubmit)="search(formsearch.value)">
+                        <mat-form-field>
+                            <mat-select placeholder="recherche par la ville">
+                                <mat-option *ngFor="let localite of localites" value="{{localite.id}}">
+                                    {{ localite.libellelocalite }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select placeholder="rechercher par le type" [(ngModel)]="Type" name="Type">
+                                <mat-option *ngFor="let typebien of typebiens" value="{{typebien.id}}">
+                                    {{ typebien.libelletype }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field><br>
+                        <div class="input-field col s6">
+                            <input id="email3" type="number" placeholder="donnez votre budget" class="validate">
+                        </div>
+                        <br><br><br><br>
+                        <button mat-raised-button color="primary">Rechercher</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="display:flex;flex-wrap:wrap;">
+    <app-catalogue *ngFor="let bien of biens | recherche : Type | paginate: { itemsPerPage: 3, currentPage: p }" [bien]="bien" class="col s4"></app-catalogue>
+</div>
+<pagination-controls (pageChange)="p = $event " previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>

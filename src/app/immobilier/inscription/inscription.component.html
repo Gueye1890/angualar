@@ -1,0 +1,56 @@
+<div class="row card">
+    <div class="card-title">
+        Inscription
+    </div>
+    <form class="col s12" #bienForm="ngForm" (ngSubmit)="send(bienForm.value)">
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="nomComplet" type="text" class="validate" ngModel>
+                <label for="first_name">Nom</label>
+                <span class="helper-text" data-error="wrong" data-success=""></span>
+            </div>
+            <div class="input-field col s6">
+                <input name="numpiece" type="text" class="validate" ngModel>
+                <label for="last_name">Numero Piece</label>
+                <span class="helper-text" data-error="wrong" data-success=""></span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="adresse" type="text" class="validate" ngModel>
+                <label for="last_name">Adresse</label>
+                <span class="helper-text" data-error="wrong" data-success=""></span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="email" type="email" class="validate" ngModel>
+                <label for="last_name">Email</label>
+                <span class="helper-text" data-error="wrong" data-success=""></span>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="tel" type="number" class="validate" ngModel>
+                <label for="email">Telephone</label>
+                <span class="helper-text" data-error="wrong" data-success=""></span>
+
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="password" type="password" class="validate" ngModel>
+                <label for="email">Mot de Passe</label>
+                <span class="helper-text" data-error="password invalide" data-success=""></span>
+
+
+            </div>
+        </div>
+        <button class="waves-effect waves-light btn" name="submit" type="submit">S'inscrire</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img src="data:image/png;base64,{{ bien.images[0].image }}" width="280px" height="150px">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><h4>{{ bien.typebien.libelletype }}</h4>
+        <i class="material-icons right">more_vert</i></span>
+        <ul *ngIf="bien.description">
+            <li>
+                <span>{{ bien.prix_location | currency :'CFA' }}</span>
+            </li>
+            <li>
+                <span>Localite:{{ bien.localite.libellelocalite }}</span>
+            </li>
+        </ul>
+        <a class="waves-effect waves-light btn" routerLink="/detailbien/{{bien.id}}">Reserver</a>
+
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+        <p>{{ bien.description }}</p>.
+    </div>
+
+</div>

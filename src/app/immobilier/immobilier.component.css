@@ -1,0 +1,11 @@
+.container {
+    background-image: url('../../assets/messi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 1300px;
+}
+
+.searchcl {
+    opacity: 0.7;
+}
